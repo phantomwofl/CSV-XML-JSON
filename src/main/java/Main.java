@@ -93,10 +93,10 @@ public class Main {
         return list;
     }
 
-    private static <T> String listToJson(List<Employee> list) {
+    private static String listToJson(List<Employee> list) {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
-        Type listType = new TypeToken<List<T>>() {
+        Type listType = new TypeToken<List<Employee>>() {
         }.getType();
         String json = gson.toJson(list, listType);
         return json;
@@ -111,9 +111,9 @@ public class Main {
         }
     }
 
-    private static List parseXML(String name) throws ParserConfigurationException, IOException, SAXException {
+    private static ArrayList<Employee> parseXML(String name) throws ParserConfigurationException, IOException, SAXException {
 
-        List<Employee> list = new ArrayList<>();
+        ArrayList<Employee> list = new ArrayList<>();
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
